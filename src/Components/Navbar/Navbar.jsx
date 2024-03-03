@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -13,21 +14,26 @@ const Navbar = () => {
       </div>
       <ul className="nav-menu">
         <li onClick={() => setMenu("shop")}>
-          Shop {menu === "shop" ? <hr /> : null}
+          <Link to={"/"}>Shop</Link>
+          {menu === "shop" ? <hr /> : null}
         </li>
         <li onClick={() => setMenu("men")}>
-          Men {menu === "men" ? <hr /> : null}
+          <Link to={"/men"}>Men</Link> {menu === "men" ? <hr /> : null}
         </li>
         <li onClick={() => setMenu("women")}>
-          Women {menu === "women" ? <hr /> : null}
+          <Link to={"/women"}>Women</Link> {menu === "women" ? <hr /> : null}
         </li>
         <li onClick={() => setMenu("kids")}>
-          Kids {menu === "kids" ? <hr /> : null}
+          <Link to={"/kids"}>Kids</Link> {menu === "kids" ? <hr /> : null}
         </li>
       </ul>
       <div className="nav-login-cart">
-        <button>Login</button>
-        <ShoppingCartOutlinedIcon />
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+        <Link to={"/cart"}>
+          <ShoppingCartOutlinedIcon />
+        </Link>
         <div className="nav-cart-count">0</div>
       </div>
     </div>

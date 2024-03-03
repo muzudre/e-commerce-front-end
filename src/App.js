@@ -5,7 +5,8 @@ import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart';
-import LoginSingUp from './Pages/LoginSingup';
+import LoginSingUp from './Pages/LoginSingUp';
+
 
 function App() {
   return (
