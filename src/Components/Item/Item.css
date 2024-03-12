@@ -19,3 +19,6 @@
   font-weight: 500;
   text-decoration: line-through;
 }
+.item:hover {
+  transform: scale(1.05);
+}
