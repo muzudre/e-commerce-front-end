@@ -20,7 +20,6 @@ const Popular = () => {
           />
         ))}
       </div>
-      <Item />
     </div>
   );
 };
