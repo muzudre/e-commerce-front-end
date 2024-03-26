@@ -4,10 +4,9 @@ import { ShopContext } from "../../Context/ShopContext";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
 const CartItems = () => {
-  const { all_product, cartItems, removeFromCart, getTotalCartAmount } =
+  const { allProducts, cartItems, removeFromCart, getTotalCartAmount } =
     useContext(ShopContext);
 
-  console.log(getTotalCartAmount());
   return (
     <div className="cart-item">
       <div className="cart-item-format-main">
@@ -19,18 +18,18 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
-      {all_product.map((e) => {
+      {allProducts.map((e) => {
         if (cartItems[e.id] > 0) {
           return (
             <div key={e.id}>
               <div className="cart-item-format cart-item-format-main">
                 <img src={e.image} className="cart-icon-product-icon" alt="" />
                 <p>{e.name}</p>
-                <p>${e.new_price}</p>
+                <p>${e?.new_price}</p>
                 <button className="cart-item-quantity">
                   {cartItems[e.id]}
                 </button>
-                <p>${e.new_price * cartItems[e.id]}</p>
+                <p>${e?.new_price * cartItems[e.id]}</p>
                 <DeleteOutlineOutlinedIcon
                   className="cart-icon-remove-icon"
                   onClick={() => removeFromCart(e.id)}

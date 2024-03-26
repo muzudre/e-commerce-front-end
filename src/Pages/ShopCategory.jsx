@@ -5,10 +5,11 @@ import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined
 import Item from "../Components/Item/Item";
 
 const ShopCategory = (props) => {
-  const { all_product } = useContext(ShopContext);
+  const { allProducts } = useContext(ShopContext);
   return (
     <div className="shop-category">
-      <img className="shop-category-banner" src={props.banner} alt="" />
+      {/* <img className="shop-category-banner" src={props.banner} alt="" /> */}
+      <br />
       <div className="shop-category-indexSort">
         <p>
           <span>Showing 1-12</span> out of 36 products
@@ -18,13 +19,13 @@ const ShopCategory = (props) => {
         </div>
       </div>
       <div className="shop-category-products">
-        {all_product.map((item, index) => {
-          if (props.category === item.category) {
+        {allProducts?.map((item, index) => {
+          if (props?.category === item?.category) {
             return (
               <Item
                 key={index}
                 id={item.id}
-                image={item.image}
+                image={item?.image}
                 name={item.name}
                 new_price={item.new_price}
                 old_price={item.old_price}

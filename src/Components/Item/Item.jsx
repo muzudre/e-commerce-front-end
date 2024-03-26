@@ -7,12 +7,12 @@ const Item = ({ image, name, new_price, old_price, id }) => {
     <div className="item">
       <Link to={`/product/${id}`} onClick={window.scrollTo(0, 0)}>
         <img src={image} alt="" />
+        <p>{name}</p>
+        <div className="item-prices">
+          <div className="item-price-new">${new_price}</div>
+          <div className="item-price-old">${old_price}</div>
+        </div>
       </Link>
-      <p>{name}</p>
-      <div className="item-prices">
-        <div className="item-price-new">${new_price}</div>
-        <div className="item-price-old">${old_price}</div>
-      </div>
     </div>
   );
 };

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RelatedProducts.css";
-import data_product from "../Assets/data";
 import Item from "../Item/Item";
 
 const RelatedProducts = () => {
+  const [productData, setproductData] = useState([]);
+
   return (
     <div className="related-products">
       <h1>Related Products</h1>
       <hr />
       <div className="related-products-item">
-        {data_product.map((item, index) => (
+        {productData.map((item, index) => (
           <Item
             key={index}
             id={item.id}
